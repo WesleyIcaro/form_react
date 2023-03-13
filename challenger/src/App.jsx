@@ -52,8 +52,8 @@ export default function LoginForm() {
 
     login(values)
       .then((sucess) => {
+        setSucess('Login efetuado com sucesso!')
         alert('Login efetuado com sucesso!')
-        console.log(sucess)
        })
       .catch((error) => {
         console.log(error)
@@ -79,7 +79,7 @@ export default function LoginForm() {
         <h1>Login Form 🐞</h1>
         {/* Coloque a mensagem de erro de login na div abaixo. Mostre a div somente se houver uma mensagem de erro.
         */}
-        {error && <div className='errorMessage'>{error.message}</div>}
+        {error && <div className='errorMessage'>{error.message}</div> || sucess && <div className='sucessMessage'>{sucess}</div>}
         <div className='row'>
           <label htmlFor={'email'}>Email</label>
           <input name='emailzada' id={'email'} type={'email'} autoComplete='off' value={_email_} onChange={handleEmail} />
